@@ -12,7 +12,7 @@ bot.on("error", (err) => console.log(err));
 
 bot.onText(/\/start/, function (msg, match) {
     var chatId = msg.chat.id 
-    const response = `✅<b>ArbinoLyzer Token Scanner</b>✅
+    const response = `✅<b>OxJarvis Token Scanner</b>✅
     <i>Enter /info tokenaddress  to display the token statistics</i>`
     bot.sendMessage(chatId,response,{parse_mode : "HTML"});
 
@@ -20,7 +20,7 @@ bot.onText(/\/start/, function (msg, match) {
 
 bot.onText(/\/help/, function (msg, match) {
     var chatId = msg.chat.id 
-    const response = `✅<b>ArbinoLyzer Token Scanner</b>✅
+    const response = `✅<b>OxJarvis Token Scanner</b>✅
     <i>Enter /info tokenaddress  to display the token statistics</i>`
     bot.sendMessage(chatId,response,{parse_mode : "HTML"});
 
@@ -35,7 +35,7 @@ bot.onText(/\/info (.+)/, function (msg, match) {
         if(data.status===0)
             bot.sendMessage(chatId,data.mesg);
         else {
-            const msg = `✅<b>ArbinoLyzer Token Scanner</b>✅
+            const msg = `✅<b>OxJarvis Token Scanner</b>✅
             <i>Do your own due dilligence before investing</i> 
             <b>Token Name:</b> ${data.name}
             <b>Token Symbol:</b> ${data.symbol}
@@ -45,8 +45,7 @@ bot.onText(/\/info (.+)/, function (msg, match) {
             <b>Token Price (usd):</b> ${data.priceUsd}
             <b>Created At:</b> ${data.pairCreatedAt}
             <b>HoneyPot Check:</b> ${data.isHoneyPot}
-            <b>Blacklist Check:</b> ${data.blacklisted}
-            <b>Source code Verified:</b> ${data.verified} 
+            <b>Blacklist Check:</b> ${data.blacklisted} 
             <b>Buy Tax:</b> ${data.buyTax}%
             <b>Sell Tax:</b> ${data.sellTax}%`
             bot.sendMessage(chatId,msg,{parse_mode : "HTML"});
